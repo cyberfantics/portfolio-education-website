@@ -40,26 +40,9 @@ const Footer = (props) => {
     youTube,
   } = props;
 
-  return (
-    <div
-      id="footer"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "2.5rem",
-        padding: "5rem 0 3rem",
-        backgroundColor: primaryColor,
-        width: "100vw"
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2.5rem",
-        }}
-      >
+   return (
+    <div id="footer" className="footer" style={{ backgroundColor: primaryColor }}>
+      <div className="social-icons">
         {email && (
           <a href={`mailto:${email}`}>
             <img src={envelopeIcon} alt="email" className="socialIcon" />
@@ -76,20 +59,12 @@ const Footer = (props) => {
           </a>
         )}
         {instagram && (
-          <a
-            href={`https://www.instagram.com/${instagram}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={`https://www.instagram.com/${instagram}`} target="_blank" rel="noopener noreferrer">
             <img src={instagramIcon} alt="Instagram" className="socialIcon" />
           </a>
         )}
         {linkedIn && (
-          <a
-            href={`https://www.linkedin.com/in/${linkedIn}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={`https://www.linkedin.com/in/${linkedIn}`} target="_blank" rel="noopener noreferrer">
             <img src={linkedInIcon} alt="LinkedIn" className="socialIcon" />
           </a>
         )}
@@ -104,22 +79,15 @@ const Footer = (props) => {
           </a>
         )}
         {youTube && (
-          <a
-            href={`https://www.youtube.com/c/${youTube}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={`https://www.youtube.com/c/${youTube}`} target="_blank" rel="noopener noreferrer">
             <img src={youTubeIcon} alt="YouTube" className="socialIcon" />
           </a>
         )}
       </div>
-      <p className="small" style={{ marginTop: 0, color: "white" }}>
-        Created by {name}
-      </p>
+      <p className="footer-text">Created by {name}</p>
     </div>
   );
 };
-
 Footer.defaultProps = {
   name: "",
 };

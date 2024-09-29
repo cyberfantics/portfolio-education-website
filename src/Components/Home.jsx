@@ -1,52 +1,55 @@
 /**
  * Home component
  *
- * The section at the top of the page to display image of your
- * choice, name and title that describes your career focus.
+ * The landing page for your portfolio.
  */
 
 import React from "react";
-import arrowSvg from "../images/down-arrow.svg";
-import PropTypes from "prop-types";
 
 /**
- * Home background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
- * represents what you see in that image.
- *
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
+ * Background image for the Home component.
  */
-import image from "../images/woman-with-tablet.jpg";
+import image from "../images/motion-background.jpg";  // Hacker-themed background
 
-const imageAltText = "Adult female in office setting leaning against a glass wall while holding a platinum Microsoft Surface Pro 7 in tablet mode preparing to write with Microsoft Surface Pen";
+const imageAltText = "dark, techy background with glowing green code";
 
-const Home = ({ name, title }) => {
+/**
+ * The Home component structure.
+ */
+const Home = () => {
   return (
-    <section id="home" className="min-height">
-      <img className="background" src={image} alt="" />
-      <div style={{ position: "absolute", top: "5rem", left: "2rem", width: "17rem" }}>
-        <h1>{name}</h1>
-        <h2>{title}</h2>
-      </div>
-      <div style={{ position: "absolute", bottom: "3rem", left: "50%" }}>
-        <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
+    <section className="padding" id="home">
+      <img className="background" src={image} alt={imageAltText} />
+      <div
+        style={{
+          backgroundColor: "#1a1a1d",  // Dark background to match hacker feel
+          color: "#00ff41",  // Matrix green text
+          width: "60%",
+          padding: "6rem",
+          margin: "3rem auto",
+          textAlign: "center",
+          borderRadius: "15px",
+          border: "1px solid #00ff41",  // Green border for matrix effect
+        }}
+      >
+        <h1>Syed Mansoor ul Hassan Bukhari</h1>
+        <p style={{ fontSize: "1.5rem", margin: "1.5rem 0" }}>
+          A passionate cybersecurity expert, AI enthusiast, and full-stack developer, 
+          creating innovative solutions to modern technical challenges.
+        </p>
+        <hr style={{ borderColor: "#00ff41" }} />  {/* Green horizontal line */}
+        <p style={{ fontSize: "1.25rem" }}>
+          Explore my portfolio to see a selection of my key projects and contributions
+          in the fields of Cybersecurity, AI, Web Development, and Automation.
+        </p>
+        <p style={{ fontSize: "1.25rem", marginTop: "2rem" }}>
+          Stay tuned as I continuously update my work and share new tools, applications, 
+          and research.
+        </p>
+        <hr style={{ borderColor: "#00ff41" }} />  {/* Green horizontal line */}
       </div>
     </section>
   );
-};
-
-Home.defaultProps = {
-  name: "",
-  title: "",
-};
-
-Home.propTypes = {
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default Home;

@@ -9,66 +9,68 @@ import React from "react";
 /**
  * About background image
  *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
- * represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a image you
- * freely use on your site.
+ * Updated to a hacker-themed background image.
+ * You can replace the image with any other suitable image in the "images" directory.
  */
-import image from "../images/motion-background.jpg";
+import image from "../images/banner.png";  // Hacker-themed background
 
-const imageAltText = "purple and blue abstract background";
+const imageAltText = "green matrix-style code background";  // Alt text for screen readers
 
 /**
- * Sort description that expands on your title on the Home component.
+ * Short description that expands on your title on the Home component.
  */
 const description =
-  "I'm a UI/UX student studying at Barnett Technical University. I enjoy creating unique and simplistic user interfaces in creative ways.";
+  "I'm a cybersecurity expert and ethical hacker passionate about AI and cutting-edge technology.";
 
 /**
- * List of some of skills or technologies you work on, are learning,
- * passionate about, or enjoy,
+ * List of skills or technologies you work on, are learning,
+ * passionate about, or enjoy.
  */
 const skillsList = [
-  "Web design",
-  "User experience",
-  "Inclusive design",
-  "Focus group testing",
-  "Mobile user interfaces",
-  "Graphic design",
+  "Penetration testing",
+  "Cryptography",
+  "Python for cybersecurity",
+  "Red Teaming",
+  "AI integration in security",
+  "Malware analysis",
 ];
 
 /**
  * Use this to give more information about what you are passionate about,
- * how you best work, or even a quote. This will help someone learn more
- * about you on a professional level.
+ * how you best work, or a quote.
  */
 const detailOrQuote =
-  "I am passionate about solving problems in new creative ways to drive innovation. By leveraging my UI/UX experience I continually look for new and better ways to make tech accessible by all.";
+  "I believe in securing the digital world using innovative techniques. Technology should be accessible and safe for all.";
 
+/**
+ * The About component structure.
+ */
 const About = () => {
   return (
     <section className="padding" id="about">
       <img className="background" src={image} alt={imageAltText} />
       <div
         style={{
-          backgroundColor: "white",
-          width: "50%",
+          backgroundColor: "#1a1a1d",  // Dark background for hacker feel
+          color: "#00ff41",  // Matrix green text color
+          width: "60%",
           padding: "4rem",
           margin: "3rem auto",
           textAlign: "center",
+          borderRadius: "15px",  // Rounded corners
+          border: "1px solid #00ff41",  // Green border
         }}
       >
-        <h2>About Myself</h2>
+        <h2>About Me</h2>
         <p className="large">{description}</p>
-        <hr />
+        <hr style={{ borderColor: "#00ff41" }} />  {/* Green horizontal line */}
         <ul
           style={{
             textAlign: "left",
             columns: 2,
             fontSize: "1.25rem",
             margin: "2rem 3rem",
+            color: "#00ff41",  // Green list items
             gap: "3rem",
           }}
         >
@@ -76,7 +78,7 @@ const About = () => {
             <li key={skill}>{skill}</li>
           ))}
         </ul>
-        <hr />
+        <hr style={{ borderColor: "#00ff41" }} />  {/* Green horizontal line */}
         <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
       </div>
     </section>

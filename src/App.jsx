@@ -12,31 +12,28 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 
-import "./styles.css";
+import "./styles.css";  // Hacker-themed CSS file
 
 /**
  * This object represents your information. The project is set so that you
- * only need to update these here, and values are passed a properties to the
+ * only need to update these here, and values are passed as properties to the
  * components that need that information.
- *
- * Update the values below with your information.
- *
- * If you don't have one of the social sites listed, leave it as an empty string.
  */
 const siteProps = {
-  name: "Alexandrie Grenier",
-  title: "Web Designer & Content Creator",
-  email: "alex@example.com",
-  gitHub: "microsoft",
-  instagram: "microsoft",
-  linkedIn: "satyanadella",
+  name: "Syed Mansoor ul Hassan Bukhari",
+  title: "AI Engineer and Ethical Hacker",
+  email: "digital.creator380@gmail.com",
+  gitHub: "cyberfantics",
+  instagram: "cyberfantics",
+  linkedIn: "mansoor-bukhari-77549a264",
   medium: "",
-  twitter: "microsoft",
-  youTube: "Code",
+  twitter: "",
+  youTube: "",
 };
 
-const primaryColor = "#4E567E";
-const secondaryColor = "#D2F1E4";
+// Hacker theme colors
+const primaryColor = "#1a1a1d";  // Dark background
+const secondaryColor = "#00ff41";  // Matrix green for highlights
 
 const App = () => {
   return (

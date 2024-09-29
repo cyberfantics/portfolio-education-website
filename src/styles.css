@@ -1,5 +1,5 @@
 /**
-* CSS file to hold styles that apply across the application
+* CSS file to hold styles that apply across the application in the Hackerz theme
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap");
@@ -12,6 +12,8 @@ body {
   overflow-x: hidden;
   padding: 0;
   width: 100%;
+  background-color: #1a1a1d;  /* Dark background to match hacker theme */
+  color: #00ff41;  /* Matrix-style green text */
 }
 
 div#main {
@@ -51,6 +53,7 @@ h1 {
   font-weight: 400;
   line-height: 0.8;
   margin: 0;
+  color: #00ff41;  /* Hacker green */
 }
 
 h2 {
@@ -58,12 +61,14 @@ h2 {
   font-weight: 400;
   margin: 0;
   padding-top: 1rem;
+  color: #00ff41;
 }
 
 h3 {
   font-weight: 400;
   font-size: 1.25rem;
   margin: 0;
+  color: #00ff41;
 }
 
 p {
@@ -71,35 +76,40 @@ p {
   line-height: 1.5;
   margin-bottom: 0;
   font-weight: 300;
+  color: #00ff41;
 }
 
 p.large {
   font-size: 24px;
+  color: #00ff41;
 }
 
 p.small {
   font-size: 15px;
+  color: #00ff41;
 }
 
 hr {
   margin: 2.5rem;
+  border-color: #00ff41;  /* Green horizontal line */
 }
 
 li {
   line-height: 1.7;
+  color: #00ff41;
 }
 
 li::marker {
-  color: #4e567e;
+  color: #00ff41;  /* Green list markers */
 }
 
 a {
-  color: black;
+  color: #00ff41;
   text-decoration: none;
 }
 
 a:hover {
-  color: #4e567e;
+  color: #ffffff;  /* White text on hover */
 }
 
 .container {
@@ -111,15 +121,57 @@ a:hover {
 
 .container .box {
   border-radius: 10px;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid #00ff41;  /* Green border */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 24px 16px;
   text-align: center;
+  background-color: #0a0a0b;  /* Dark box background */
+  color: #00ff41;  /* Green text in box */
 }
 
 img.socialIcon {
   height: 30px;
   width: 30px;
+  filter: brightness(0) invert(1);  /* Makes icons white or green depending on background */
+}
+
+/* footer styles */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 5rem 0 3rem;
+  width: 100vw;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.socialIcon {
+  height: 30px;
+  width: 30px;
+}
+
+.footer-text {
+  margin-top: 0;
+  color: white;
+  font-size: 0.875rem; /* Adjust size for a small footer text */
+}
+
+section img.background {
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 100vmax;
+  z-index: -1;
 }

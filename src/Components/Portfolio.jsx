@@ -1,83 +1,105 @@
 /**
  * Portfolio component
  *
- * Highlights some of  your creations. These can be designs, websites,
- * open source contributions, articles you've written and more.
- *
- * This is a great area for you to to continually add to and refine
- * as you continue to learn and create.
+ * A showcase of Syed Mansoor ul Hassan Bukhari's selected projects.
  */
 
 import React from "react";
 
 /**
- * Desk image
+ * Portfolio background image.
  *
- * Below is a sample desk image. Feel free to update this to an image of your choice,
- * updating below imageAltText to string that represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
+ * Following the Hackerz theme for a dark and tech-inspired design.
  */
-import image from "../images/design-desk.jpeg";
+import image from "../images/motion-background.jpg";  // Hackerz theme background image
 
-const imageAltText = "desktop with books and laptop";
+const imageAltText = "dark hacker-themed background with matrix-style code";
 
 /**
- * Project list
+ * List of projects.
  *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
+ * This includes Syed's notable projects with a brief description and a link to each repository.
  */
-const projectList = [
+const portfolioList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
-    description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+    title: "py-to-exe Converter",
+    description: "A GUI-based tool to convert Python scripts into standalone executable files.",
+    url: "https://github.com/CyberFantics/py-to-exe",
   },
   {
-    title: "Web Development for Beginners",
-    description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+    title: "Indian Flag Generator",
+    description: "A Tkinter application that draws the Indian flag with precise dimensions and colors.",
+    url: "https://github.com/CyberFantics/indian-flag-tkinter",
   },
   {
-    title: "My Resume Site",
+    title: "AI Chatbots for Business",
     description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+      "A collection of AI-driven chatbots for businesses like restaurants, salons, and medical centers, integrated with appointment booking, CRM, and social media.",
+    url: "https://github.com/CyberFantics/ai-chatbots-business",
   },
   {
-    title: "GitHub Codespaces and github.dev",
+    title: "Health Care Reminder App",
     description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+      "A Tkinter-based health care reminder system with customizable notifications and health tips.",
+    url: "https://github.com/CyberFantics/health-care-reminder",
+  },
+  {
+    title: "UPS Controller Using Arduino",
+    description:
+      "An Arduino-based UPS project designed to manage power for two 100W bulbs based on voltage, battery status, and solar input.",
+    url: "https://github.com/CyberFantics/ups-arduino-controller",
   },
 ];
 
+/**
+ * The Portfolio component structure.
+ */
 const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
-            alt={imageAltText}
-          />
-        </div>
-        <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
+      <img className="background" src={image} alt={imageAltText} />
+      <div
+        style={{
+          backgroundColor: "#0d0d0d",  // Dark background for the Hackerz theme
+          color: "#00ff41",  // Matrix-style green text
+          width: "60%",
+          padding: "4rem",
+          margin: "3rem auto",
+          textAlign: "center",
+          borderRadius: "15px",
+          border: "1px solid #00ff41",  // Green border to enhance the theme
+        }}
+      >
+        <h2>Portfolio</h2>
+        <p className="large">Explore some of the projects I've been working on:</p>
+        <hr style={{ borderColor: "#00ff41" }} />  {/* Hackerz-themed horizontal line */}
+        <ul
+          style={{
+            textAlign: "left",
+            fontSize: "1.25rem",
+            margin: "2rem 3rem",
+            color: "#00ff41",
+          }}
+        >
+          {portfolioList.map((project, index) => (
+            <li key={index} style={{ marginBottom: "1.5rem" }}>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#00ff41",
+                  textDecoration: "underline",
+                }}
+              >
+                View Project
               </a>
-              <p className="small">{project.description}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
+        <hr style={{ borderColor: "#00ff41" }} />  {/* Hackerz-themed horizontal line */}
       </div>
     </section>
   );
